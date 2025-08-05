@@ -1,6 +1,4 @@
-
-
-  /* 기본 리셋 */
+/* 기본 리셋 */
 *,
 *::before,
 *::after {
@@ -15,6 +13,7 @@ body {
   min-height: 100vh;
   display: flex;
   overflow-x: hidden;
+  flex-direction: row;
 }
 
 /* 사이드바 */
@@ -30,6 +29,7 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
+  transition: all 0.3s ease;
 }
 
 .sidebar-logo {
@@ -200,34 +200,48 @@ body {
 }
 
 /* 반응형 */
+
+/* 모바일 : 화면 너비 900px 이하에서 사이드바 위로 올리고 가로 메뉴로 변경 */
 @media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
   .sidebar {
     position: relative;
     width: 100%;
     height: auto;
     box-shadow: none;
-    padding: 1.5rem;
+    padding: 1rem 0;
   }
 
-  .main-content {
-    margin-left: 0;
-    padding: 2rem 1rem;
+  .sidebar-logo {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
   }
 
   .sidebar-nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
   }
 
   .sidebar-nav li {
     margin-bottom: 0;
   }
+
+  .main-content {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
 }
 
+/* 작은 화면 폰트 사이즈 조절 */
 @media (max-width: 480px) {
   .sidebar-logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .content-section h2 {
