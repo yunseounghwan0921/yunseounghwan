@@ -199,6 +199,13 @@ body {
   font-weight: 700;
 }
 
+.box {
+  width: none;
+  height: none;
+  background-color: #b8ae9e;
+  border: none;
+}
+
 /* 반응형 */
 
 /* 모바일 : 화면 너비 900px 이하에서 사이드바 위로 올리고 가로 메뉴로 변경 */
